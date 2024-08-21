@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Exercises;
 
-use Psr\Log\LoggerInterface;
+use Illuminate\Support\Facades\Log;
 
 final class Employee
 {
-    private const EMPLOYEE = '[
+    public const EMPLOYEE = '[
         {
             "name": "Eryn Bryan",
             "age": "23",
@@ -26,26 +26,17 @@ final class Employee
         }
     ]';
 
-    private LoggerInterface $logger;
-
-    public function __construct(LoggerInterface $logger)
+    public static function decodeJsonData(): array
     {
-        $this->logger = $logger;
-    }
+        $decodedEmployees = json_decode(self::EMPLOYEE, true);
 
-    public function decodeJsonData(): array
-    {
-        $decoded_employees = json_decode(self::EMPLOYEE, true);
-
-        if(null != $decoded_employees && json_last_error() === JSON_ERROR_NONE){
-
-            $this->logger->info("The Json data was decoded successfully", $decoded_employees);
-
-            return $decoded_employees;
+        if(null != $decodedEmployees && json_last_error() === JSON_ERROR_NONE){
+            
+            return $decodedEmployees;
 
         }else{
 
-          $this->logger->error('\Exercises\Employee:decodeJsonData'. json_last_error_msg());
+          Log::error('\Exercises\Employee:decodeJsonData'. json_last_error_msg());
 
           return [];
         }
@@ -70,7 +61,7 @@ final class Employee
 
         }else{
 
-          $this->logger->error('EmployeeController:display'. json_last_error_msg());
+          Log::error('\Exercises\Employee:decodeJsonData'. json_last_error_msg());
           echo "Error decoding JSON: " . json_last_error_msg();
         }
 

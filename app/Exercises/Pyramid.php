@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace App\Exercises;
 
-use Psr\Log\LoggerInterface;
-
-
 /**
 * Print Pyramid.
 */
@@ -14,36 +11,63 @@ use Psr\Log\LoggerInterface;
 final class Pyramid
 {
      
-    private LoggerInterface $logger;
- 
-    public function __construct(LoggerInterface $logger)
-    {
-        $this->logger = $logger;
-    }
+   public static function printPyramid(int $rows): string
+   { 
+       $pyramid =""; 
 
-    public static function printPyramid(int $rows)
-    {
-        $output ="";
-        $output .= "<pre>";
+       for($i = 1; $i <= $rows; $i++) {
+           //print spaces
+           for($j=0;$j<$rows-$i;$j++){
 
-        $numbersOfSpaces = 2 * $rows - 2;
+               $pyramid .=" ";
+           } 
+           // print hashes
+           for($k=0;$k<(2 * $i) - 1;$k++){
+            
+               $pyramid .="#";
+           }
         
-        for ($i = 0; $i < $rows; $i++)
-        {
-            for ($j = 0; $j < $numbersOfSpaces; $j++)
-        
-                $output .=" ";
-                $numbersOfSpaces -=1;
+           $pyramid .="\n";
+          
+       }
+       
+      return $pyramid;
+   }
 
-            for ($j = 0; $j <= $i; $j++ )
-            {
-                $output .="# ";
-            }
-                $output .="\n";
-        }
+  public static function printPyramidWithBorderLine(int $rows): string
+  { 
+      $pyramid =""; 
+      
+      for($i = 1; $i <= $rows; $i++) {
+          
+          // print left border line
+          $pyramid .="'";
+           
+          // print spaces
+          for($j=0;$j<$rows-$i;$j++){
 
-        echo $output;
+             $pyramid .=" ";
+          } 
+          // print hashes
+          for($k=0;$k<(2 * $i) - 1;$k++){
         
-    }
+             $pyramid .="#";
+        
+          }
+
+          //print right border line
+          for($j=0;$j<$rows-$i;$j++){
+            
+              $pyramid .=" ";
+          } 
+          $pyramid .="'";
+       
+          $pyramid .="\n";
+         
+      }
+      
+     return $pyramid;
+  }
+   
 
 }

@@ -17,11 +17,14 @@ use Illuminate\Http\Request;
 class WowcodingexerciseController extends Controller
 {
 
-    public function showEmployeeData(Employee $employee)
+    public function printEmployeeData()
     {
-        if(!empty($employee->decodeJsonData())){
-            return view('employee',['employees'=>$employee->decodeJsonData()]); 
+        if(!empty(Employee::decodeJsonData())){
+
+            return view('employee',['employees'=>Employee::decodeJsonData()]); 
+
         }else{
+
             return view('employee'); 
         }
     }
@@ -33,8 +36,8 @@ class WowcodingexerciseController extends Controller
     public function numberOfVowels()
     {
       $string = "Hello!";
-
       $numbersOfVowels =  Vowels::count($string);
+
       return view('vowels',['numbersOfVowels'=>$numbersOfVowels,'string'=>$string]); 
     }
 
@@ -44,10 +47,8 @@ class WowcodingexerciseController extends Controller
          $queue1->add(1);
          $queue1->add(2);
          $queue1->add(3);
-         $peek   = $queue1->peek();$queue = ['peek'=>$peek,
-         'remove'=>$remove,
-         'zip'=>$zip
-        ];
+         $peek   = $queue1->peek();
+    
          $remove = $queue1->remove();
          
          $queue2 = new Queue();

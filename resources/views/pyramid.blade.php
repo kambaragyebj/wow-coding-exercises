@@ -7,6 +7,6 @@
 </div>
 {{-- Please enter update the numbers of rows in the function.   --}}
 {{-- {{ \App\Exercises\Pyramid::printPyramid(int $rows) }} --}}
-{{ \App\Exercises\Pyramid::printPyramid(3) }}
+<pre>{{  \App\Exercises\Pyramid::printPyramidWithBorderLine(3) }} </pre>
 
 @stop

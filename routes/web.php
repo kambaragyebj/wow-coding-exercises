@@ -20,7 +20,7 @@ use App\Http\Controllers\WowcodingexerciseController;
 // });
 
 
-Route::get('/',[WowcodingexerciseController::class,'showEmployeeData']);
+Route::get('/',[WowcodingexerciseController::class,'printEmployeeData']);
 Route::get('/exercise-2',[WowcodingexerciseController::class,'numberOfVowels']);
 Route::view('/exercise-3', 'pyramid');
 // Route::get("/test-3",[WowcodingexerciseController::class,'pyramid']);

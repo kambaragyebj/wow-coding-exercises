@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Log;
 
 final class Queue
 {
-    private array $queue=[];
+    public array $queue=[];
    
     public function add(mixed $value)
     {
@@ -61,8 +61,6 @@ final class Queue
                     $result->add($queue2Array[$i]);
                 }
             }
-
-            Log::info('Queue1 and Queue2 interweaves successfully');
 
             return $result;
 
