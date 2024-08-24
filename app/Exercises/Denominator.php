@@ -26,24 +26,27 @@ final class Denominator
         $result =[];
        
         try {
-
+          // looping through each denomination $denominations = [50=>1,300=>2,100=>1];
             foreach($denominations as $denomination=>$maxDenominations){
         
                 $newAmount=0;
-                $recurrence =[];
+                //$recurrence =[];
                 $sum =0;
-                
+                // maximum number of denomination
                 if($maxDenominations >=1){
 
                     for($i=1;$i<=$maxDenominations;$i++){
+                          //200 !=0           //200 >= 50
                         if($amount !=0 && $amount >=$denomination){
+                                        // 200-50 = 150 // we can use the amount/denomination
                             $newAmount = $amount-$denomination;
-                            $recurrence[]= $newAmount;
+                            // $recurrence[]= $newAmount;
                             $amount =$newAmount;
+                            $sum =$sum + 1 ;
                         } 
                     }
-                
-                   $result[$denomination]= $sum=(count($recurrence)); 
+                    $result[$denomination]= $sum; 
+                  // $result[$denomination]= $sum=(count($recurrence)); 
                 }
             }  
 
@@ -62,5 +65,6 @@ final class Denominator
         }
       return $result;
     }
+
 
 }

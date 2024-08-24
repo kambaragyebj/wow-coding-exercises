@@ -37,9 +37,9 @@ final class Queue
         return $this->queue[$count];   
     }
 
-    public static function zip(self $queue1, self $queue2): self
+    public static function zip(Queue $queue1, Queue $queue2): Queue
     {
-        $result = new self();
+        $result = new Queue();
 
         try {
             $queue1Array = $queue1->queue;

@@ -16,12 +16,12 @@ final class Pyramid
        $pyramid =""; 
 
        for($i = 1; $i <= $rows; $i++) {
-           //print spaces
+           //print spaces // $rows-$i number of spaces decreases 
            for($j=0;$j<$rows-$i;$j++){
 
                $pyramid .=" ";
            } 
-           // print hashes
+           // print hashes// (2*i)-1 number of hashes increase 
            for($k=0;$k<(2 * $i) - 1;$k++){
             
                $pyramid .="#";

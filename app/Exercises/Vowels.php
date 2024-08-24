@@ -30,7 +30,7 @@ final class Vowels
             $counter=0;
             $split_string = str_split($string);
             foreach($split_string as $char){
-        
+              // if(in_array($char,$array)){
               if (strpos(env('VOWELS'), $char) !== false) {
     
                   $counter++;

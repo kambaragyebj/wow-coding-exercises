@@ -67,14 +67,13 @@ class WowcodingexerciseController extends Controller
     }
     public function getDenominations()
     {
+       
         //JK-11-08-2024 : Please update the amount and denominations
-          $amount = 750;
+           $amount = 700;
         // $denominations = [50=>5];
         // $denominations = [50=>0,100=>6];
            $denominations = [50=>1,300=>2,100=>1];
-
         $value = Denominator::getDenominations($amount,$denominations);
-        
         return view('denominator',['value'=>$value]); 
 
     }   

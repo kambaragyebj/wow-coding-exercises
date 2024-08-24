@@ -16,7 +16,7 @@
           <tr>
             <td>{{$queues['peek']}}</td>
             <td>{{$queues['remove'] }}</td>
-            <td> @dump($queues['zip'])</td>
+            <td> @dump($queues['zip']->queue)</td>
           </tr>
     </tbody>
 </table>

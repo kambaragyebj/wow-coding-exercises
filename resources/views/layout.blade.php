@@ -18,19 +18,19 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/exercise-2"><button type="button" class="btn btn-primary">Exercise 2</button> </a>
+                    <a class="nav-link" href="/dev/public/exercise-2"><button type="button" class="btn btn-primary">Exercise 2</button> </a>
                   </li>
                 
                   <li class="nav-item">
-                    <a class="nav-link "  href="/exercise-3"><button type="button" class="btn btn-primary">Exercise 3</button> </a>
+                    <a class="nav-link "  href="/dev/public/exercise-3"><button type="button" class="btn btn-primary">Exercise 3</button> </a>
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link" href="/exercise-4" "><button type="button" class="btn btn-primary">Exercise 4</button> </a>
+                      <a class="nav-link" href="/dev/public/exercise-4" "><button type="button" class="btn btn-primary">Exercise 4</button> </a>
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link "  href="/exercise-5"><button type="button" class="btn btn-primary">Exercise 5</button> </a>
+                      <a class="nav-link "  href="/dev/public/exercise-5"><button type="button" class="btn btn-primary">Exercise 5</button> </a>
                   </li>
               </ul>
             </div>
